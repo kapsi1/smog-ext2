@@ -5,10 +5,11 @@ import 'dart:html';
 import 'dart:convert';
 import 'package:chrome/chrome_ext.dart' as chrome;
 import 'dart:async';
+import 'dart:js';
 
 final shownPollutants = ['SO2', 'NO2', 'PM10', 'PM2.5'];
 //String serverUrl = 'http://localhost:8080';
-  String serverUrl = 'https://smog-server.herokuapp.com/';
+String serverUrl = 'https://smog-server.herokuapp.com';
 Map<String, Pollutant> displayedPollutants = {};
 Timer timer;
 Storage localStorage = window.localStorage;
@@ -49,6 +50,9 @@ class Pollutant {
 }
 
 changeLocation(String location) {
+  var options = new JsObject.jsify({'title': 'Smog: $location'});
+  context['opr']['speeddial'].callMethod('update', [options]);
+
   querySelector('main').nodes.clear();
 
   HttpRequest httpRequest = new HttpRequest();
