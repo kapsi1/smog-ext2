@@ -1,0 +1,24 @@
+{
+  "manifest_version": 2,
+  "name": "Smog Małopolska",
+  "description": "Poziom smogu w Małopolsce",
+  "version": "6",
+  "background": {"page": "sd.html"},
+  "options_page": "options.html",
+  "icons": {
+    "16": "img/icon_16.png",
+    "48": "img/icon_48.png",
+    "128": "img/icon_128.png"
+  },
+  "permissions": [
+    "speeddial",
+    "tabs",
+    "http://smog-server.herokuapp.com/"
+  ],
+  "speeddial": {
+    "url": "http://monitoring.krakow.pios.gov.pl/",
+    "title": "Smog Małopolska",
+    "size_mode": "adapt"
+  },
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+}

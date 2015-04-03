@@ -1,0 +1,11 @@
+name: 'Smog Małopolska'
+version: 6.0.0
+description: >
+  Opera speed dial extension for displaying air quality.
+environment:
+  sdk: '>=1.0.0 <2.0.0'
+dependencies:
+  browser: any
+  chrome: ">=0.6.5 <0.7.0"
+transformers:
+  - chrome

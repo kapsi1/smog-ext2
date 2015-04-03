@@ -1,0 +1,74 @@
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Roboto'), local('Roboto-Regular'), url(roboto.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+main {
+    display: flex;
+    flex-flow: row wrap;
+    height: 100%;
+}
+
+article {
+    width: 50%;
+    height: 50%;
+    margin: 0;
+    border: 1px solid lightgray;
+    border-left: none;
+    border-top: none;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+article > * {
+    padding: 3px;
+}
+
+header {
+    font-size: 9vmin;
+    text-align: center;
+}
+
+section {
+    font-size: 24vmin;
+    font-weight: bold;
+    text-align: center;
+}
+
+footer {
+    font-size: 8vmin;
+    text-align: right;
+}
+
+.in-norm section {
+    color: #5cb85c;
+}
+
+.warning section {
+    color: #f0ad4e;
+}
+
+.warning header {
+    background-color: #FFF2AE;
+}
+
+.over-norm header {
+    color: white;
+    background-color: #d9534f;
+}
+
+.over-norm section {
+    color: #ce0000;
+}
