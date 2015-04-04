@@ -38,6 +38,7 @@ article > * {
 
 header {
     font-size: 9vmin;
+    line-height: 9vmin;
     text-align: center;
 }
 

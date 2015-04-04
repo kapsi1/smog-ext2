@@ -12,7 +12,6 @@
   },
   "permissions": [
     "speeddial",
-    "tabs",
     "http://smog-server.herokuapp.com/"
   ],
   "speeddial": {
