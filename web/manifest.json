@@ -3,6 +3,7 @@
   "name": "Smog Małopolska",
   "description": "Poziom smogu w Małopolsce",
   "version": "6",
+  "homepage_url": "https://github.com/kapsi1/smog-ext2",
   "background": {"page": "sd.html"},
   "options_page": "options.html",
   "icons": {
