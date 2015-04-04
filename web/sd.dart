@@ -76,7 +76,7 @@ changeLocation(String location) {
     Map pollutants = locationData['pollutants'];
     List sorted = new List.from(pollutants.keys);
     sorted.sort();
-    for (String shortName in sorted) {
+    sorted.forEach((shortName) {
       if (!shownPollutants.contains(shortName)) return;
       Map lastValue = pollutants[shortName]['lastValue'];
       Pollutant p = new Pollutant(shortName);
@@ -84,7 +84,8 @@ changeLocation(String location) {
       double v = lastValue['value'];
       p.update(d, v);
       displayedPollutants[p.shortLabel] = p;
-    }
+    });
+
     if (timer != null) timer.cancel();
     timer = new Timer.periodic(new Duration(minutes: 5), (Timer timer) {
       updatePollutantValues(location);
@@ -101,11 +102,10 @@ updatePollutantValues(String location) {
     ..onLoadEnd.listen((e) {
     Map locationData = JSON.decode(httpRequest.responseText);
     Map pollutants = locationData['pollutants'];
-
-    for (String pollutantName in displayedPollutants.keys) {
+    displayedPollutants.keys.forEach((String pollutantName) {
       var p = pollutants[pollutantName];
       displayedPollutants[pollutantName].update(DateTime.parse(p['lastValue']['dateTime']), p['lastValue']['value']);
-    }
+    });
   })
     ..send();
 }
